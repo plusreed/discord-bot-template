@@ -1,6 +1,13 @@
 #!/bin/bash
 set -e
 
+# Checks if this is a valid environment file.
+# (Careful, this is Bash-specific syntax and won't work on sh.)
+if ! [[ "$1" =~ ^(dev|test|prod)$ ]]; then
+  echo "Invalid environment. Must be one of: dev, test, prod"
+  exit 1
+fi
+
 # Check that the environment file exists.
 if ! [ -f "$1.env" ]; then
   echo "Unknown environment file $1. Make sure the environment file exists."

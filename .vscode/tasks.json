@@ -16,10 +16,6 @@
         {
             "type": "npm",
             "script": "build"
-        },
-        {
-            "type": "npm",
-            "script": "lint"
         }
     ]
 }

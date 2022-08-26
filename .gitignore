@@ -4,3 +4,5 @@ dist/
 prod.env
 test.env
 dev.env
+
+.vscode/*.log

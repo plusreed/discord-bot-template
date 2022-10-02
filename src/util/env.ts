@@ -3,15 +3,7 @@ function envIsDefined (key: string): boolean {
 }
 
 function envAnyDefined (...keys: string[]): boolean {
-    let ok = true
-
-    for (const key of keys) {
-        if (typeof process.env[key] === 'undefined') {
-            ok = false
-        }
-    }
-
-    return ok
+    return keys.some(envIsDefined)
 }
 
 export {
